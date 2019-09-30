@@ -9,13 +9,19 @@ type Node struct {
 	right *Node
 }
 
-//BinaryTree represents the tree.
-type BinaryTree struct {
+//BinarySearchTree represents the tree.
+type BinarySearchTree struct {
 	root *Node
 }
 
+//NewBinarySearchTree creates an empty tree.
+func NewBinarySearchTree() *BinarySearchTree {
+	tree := &BinarySearchTree{}
+	return tree
+}
+
 //Insert adds a new node to the tree.
-func (tree *BinaryTree) Insert(v int64) {
+func (tree *BinarySearchTree) Insert(v int64) {
 	newNode := &Node{v, nil, nil}
 	if tree.root != nil {
 		insertNode(tree.root, newNode)
@@ -42,7 +48,7 @@ func insertNode(n, newNode *Node) {
 }
 
 //PreOrderTraverse performs a pre-order traverse of the tree and prints the the keys of the nodes.
-func (tree *BinaryTree) PreOrderTraverse() {
+func (tree *BinarySearchTree) PreOrderTraverse() {
 	fmt.Println("PRE-ORDER TRAVERSE----")
 	if tree.root != nil {
 		preOrderNode(tree.root)
@@ -59,7 +65,7 @@ func preOrderNode(n *Node) {
 }
 
 //InOrderTraverse performs a in-order traverse of the tree and prints the the keys of the nodes.
-func (tree *BinaryTree) InOrderTraverse() {
+func (tree *BinarySearchTree) InOrderTraverse() {
 	fmt.Println("IN-ORDER TRAVERSE----")
 	if tree.root != nil {
 		inOrderNode(tree.root)
@@ -76,7 +82,7 @@ func inOrderNode(n *Node) {
 }
 
 //PostOrderTraverse performs a post-order traverse of the tree and prints the the keys of the nodes.
-func (tree *BinaryTree) PostOrderTraverse() {
+func (tree *BinarySearchTree) PostOrderTraverse() {
 	fmt.Println("POST-ORDER TRAVERSE----")
 	if tree.root != nil {
 		postOrderNode(tree.root)
@@ -93,7 +99,7 @@ func postOrderNode(n *Node) {
 }
 
 //Min returns the minimum key in the tree.
-func (tree *BinaryTree) Min() int64 {
+func (tree *BinarySearchTree) Min() int64 {
 	if tree.root != nil {
 		return minNode(tree.root)
 	}
@@ -110,7 +116,7 @@ func minNode(n *Node) int64 {
 }
 
 //Max returns the maximum key in the tree.
-func (tree *BinaryTree) Max() int64 {
+func (tree *BinarySearchTree) Max() int64 {
 	if tree.root != nil {
 		curr := tree.root
 
@@ -123,7 +129,7 @@ func (tree *BinaryTree) Max() int64 {
 }
 
 //Search returns true if the key is in the tree, false otherwise.
-func (tree *BinaryTree) Search(k int64) bool {
+func (tree *BinarySearchTree) Search(k int64) bool {
 	return search(tree.root, k)
 }
 
@@ -142,7 +148,7 @@ func search(n *Node, k int64) bool {
 }
 
 //Remove deletes the node with key v from the tree.
-func (tree *BinaryTree) Remove(v int64) *Node {
+func (tree *BinarySearchTree) Remove(v int64) *Node {
 	if tree.root != nil {
 		return removeNode(tree.root, v)
 	}
@@ -169,7 +175,7 @@ func removeNode(n *Node, v int64) *Node {
 	return n
 }
 
-func (tree *BinaryTree) String() {
+func (tree *BinarySearchTree) String() {
 	fmt.Println("---------------------STRUCTURE OF THE BST---------------------------")
 	stringify(tree.root, 0)
 	fmt.Printf("--------------------------------------------------------------------\n\n")
