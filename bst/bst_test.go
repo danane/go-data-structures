@@ -5,50 +5,6 @@ import (
 	"testing"
 )
 
-func TestCreate(t *testing.T) {
-
-}
-
-// func TestRoot(t *testing.T) {
-// 	tree := bst.NewBinarySearchTree()
-// 	tree.Insert(8)
-
-// 	got := tree.RootKey()
-// 	want := int64(8)
-
-// 	if got != want {
-// 		t.Errorf("got '%d' want '%d'", got, want)
-// 	}
-// }
-
-func TestPreOrderTraverse(t *testing.T) {
-
-}
-
-func TestInOrderTraverse(t *testing.T) {
-
-}
-
-func TestPostOrderTraverse(t *testing.T) {
-
-}
-
-func TestMin(t *testing.T) {
-
-}
-
-func TestMax(t *testing.T) {
-
-}
-
-func TestSearch(t *testing.T) {
-
-}
-
-func TestString(t *testing.T) {
-
-}
-
 func generateTree(values []int64) *BinarySearchTree {
 	root := &Node{values[0], nil, nil}
 
