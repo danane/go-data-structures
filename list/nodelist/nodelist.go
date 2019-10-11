@@ -9,7 +9,9 @@ import (
 )
 
 const (
-	ErrEmptyList   = nodeListError("empty list")
+	// ErrEmptyList is the error returned by the node list when a remove operation is performed on an emptpy list.
+	ErrEmptyList = nodeListError("empty list")
+	//ErrKeyNotFound is the error returned by the node list when a remove operation is perfomed on a list that does not contain a node with that key.
 	ErrKeyNotFound = nodeListError("key not found")
 )
 

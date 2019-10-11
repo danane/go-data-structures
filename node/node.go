@@ -19,7 +19,7 @@ func (n *Node) Key() int {
 	return n.key
 }
 
-// Key returns the pointer to the next node.
+// Next returns the pointer to the next node.
 func (n *Node) Next() *Node {
 	return n.next
 }
