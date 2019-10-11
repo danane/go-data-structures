@@ -1,4 +1,4 @@
-all: check_go_fmt deps lint test
+all: check_go_fmt deps mocks lint test
 
 .PHONY: deps-init
 deps-init:
@@ -39,6 +39,11 @@ lint:
 .PHONY: test
 test:
 	go test -v -cover -race ./...
+
+.PHONY: mocks
+mocks:
+	go generate ./...
+
 
 .PHONY: check_go_fmt
 check_go_fmt:

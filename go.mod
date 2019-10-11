@@ -4,6 +4,7 @@ go 1.13
 
 require (
 	github.com/gogo/protobuf v1.3.0 // indirect
+	github.com/golang/mock v1.1.1
 	github.com/golangci/gocyclo v0.0.0-20180528144436-0a533e8fa43d // indirect
 	github.com/golangci/gofmt v0.0.0-20190930125516-244bba706f1a // indirect
 	github.com/golangci/golangci-lint v1.19.1 // indirect
